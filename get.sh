@@ -16,6 +16,8 @@ command_exist() {
 freebsd_init() {
 	${sh_c} 'ASSUME_ALWAYS_YES=yes pkg bootstrap'
 	${sh_c} 'pkg update'
+	${sh_c} 'pkg install --yes python3 python36 py36-pip py36-sqlite3 libxml2 libxslt'
+	${sh_c} 'python3 -m pip install coala coala-bears'
 }
 
 setup() {
